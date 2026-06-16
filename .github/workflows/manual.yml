@@ -1,7 +1,7 @@
 name: basic ci cd pipeline
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
     inputs:
       environment:
         description: "choose environment"
@@ -26,6 +26,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: test
-    if: ${{inputs.environment == "prod"}}  
+    if: ${{inputs.environment == 'prod'}}  
     steps:
       - run: echo " build"    
