@@ -26,6 +26,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: test
-    if ${{inputs.environment == "prod"}}  
+    if: ${{inputs.environment == "prod"}}  
     steps:
       - run: echo " build"    
