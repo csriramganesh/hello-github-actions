@@ -9,5 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "hello sriram"  
-
+      - run: echo "hello sriram"
+        
+      - name: Meet the runner
+        run: |
+          hostname
+          whoami
+          pwd
+          ls -la
