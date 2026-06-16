@@ -6,15 +6,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-      - steps:
-          run: echo "build finished"
+    steps:
+      run: echo "build finished"
   test:
     runs-on: ubuntu-latest
-      - steps:
-          run: echo "test finished"
+      steps:
+        run: echo "test finished"
   deploy:
     runs-on: ubuntu-latest
-      - steps:
-          run: echo "deploy finished"
+      steps:
+        run: echo "deploy finished"
 
           
