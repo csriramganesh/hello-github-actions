@@ -1,20 +1,22 @@
 name: parallel-job
 
-on: 
+on:
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      run: echo "build finished"
+      - run: echo "build finished"
+
   test:
     runs-on: ubuntu-latest
     steps:
-      run: echo "test finished"
+      - run: echo "test finished"
+
   deploy:
     runs-on: ubuntu-latest
     steps:
-      run: echo "deploy finished"
+      - run: echo "deploy finished"
 
           
