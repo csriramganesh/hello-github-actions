@@ -24,7 +24,8 @@ jobs:
     steps:
       - name: download-artifact
         uses: actions/download-artifact@v4
-        with: build-report
+        with: 
+          name: build-report
 
       - name: read-report
         run: cat report.txt      
