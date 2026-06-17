@@ -14,7 +14,7 @@ jobs:
         run: cat report.txt
 
       - name: upload artifact
-        run: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: build-report
           path: report.txt
