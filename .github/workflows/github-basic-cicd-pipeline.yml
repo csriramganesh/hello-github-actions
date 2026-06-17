@@ -1,0 +1,42 @@
+name: hello-github-actions-basic-pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      Environment: 
+        description: "choose environment"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - prd
+
+env:
+  APP_NAME: hello-github-actions
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: |
+        echo "building $APP_NAME"
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: test 
+        run: |
+        echo "testing $APP_NAME"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    if: ${{inputs.environment == 'prd'}}   
+    steps:
+      - name: build
+        run: |
+        echo "deploying $APP_NAME to ${{input.environment}}"          
+
+        
