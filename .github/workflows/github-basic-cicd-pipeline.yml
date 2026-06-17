@@ -37,6 +37,6 @@ jobs:
     steps:
       - name: build
         run: |
-          echo "deploying $APP_NAME to ${{input.environment}}"          
+          echo "deploying $APP_NAME to ${{inputs.environment}}"          
 
         
