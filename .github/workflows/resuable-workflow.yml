@@ -1,0 +1,17 @@
+name: resuable-workflow
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-repository
+        uses: actions/checkout@v4
+
+      - name: build application
+        run: echo "building workflow for resuable workflow"
+
+      - name: Run tests
+        run: echo "Running tests from reusable workflow"
