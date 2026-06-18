@@ -17,9 +17,9 @@ jobs:
 
     steps:
       - name: print matrix values
-        runs: |
+        run: |
           echo "os.${{matrix.os}}"
-          echo "Node version :${{matrix.nodeversion}}"        
+          echo "Node version: ${{matrix.nodeversion}}"        
               
   
       
