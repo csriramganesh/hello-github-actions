@@ -23,10 +23,10 @@ jobs:
           echo "{{secrets.DOCKER_PASSWORD}}" | docker login -u "{{secrets.DOCKER_USER}}" --password stdin
       - name: TAG name
         run: |
-          docker tag $IMAGE_NAME ${{DOCKER_USER}}/$IMAGE_NAME:latest
+          docker tag $IMAGE_NAME ${{secrets.DOCKER_USER}}/$IMAGE_NAME:latest
 
       - name: docker dockerhub
         run: |
-          docker push ${{DOCKER_USER}}/$IMAGE_NAME:latest    
+          docker push ${{secrets.DOCKER_USER}}/$IMAGE_NAME:latest    
 
 
