@@ -1,0 +1,17 @@
+name: reusable build workflow
+
+on:
+  workflow_call:
+    inputs:
+      app_name:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show App name
+        run: echo "building ${{inputs.app_name}}"
+        
+

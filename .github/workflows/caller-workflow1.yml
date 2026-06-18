@@ -1,0 +1,10 @@
+name: caller-workflow1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-build:
+    uses: ./.github/workflows/reusable-build.yml
+    with:
+      app_name: hello-app
