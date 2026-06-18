@@ -1,7 +1,8 @@
 name: My-first-workflow
 
 on:
-  push:
+  workflow_dispatch:
+    
 
 
 jobs:
