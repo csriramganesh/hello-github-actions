@@ -1,4 +1,4 @@
-name: reusgit able-workflow
+name: resuable-workflow
 
 on:
   workflow_call:
