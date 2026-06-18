@@ -1,0 +1,25 @@
+name: matrix combination demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+          - ubuntu-latest
+        node-version:
+          - 18
+          - 20
+      runs-on: ${{matrix.os}}
+
+      steps:
+        - name: print matrix values
+          runs: |
+            echo "os.${{matrix.os}}"
+            echo "Node version :${{matrix.nodeversion}}"        
+              
+  
+      
