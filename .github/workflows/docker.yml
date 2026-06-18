@@ -16,7 +16,7 @@ jobs:
 
       - name: Build docker image
         run: |
-          docker build -t $IMAGE_NAME
+          docker build -t $IMAGE_NAME .
 
       - name: show containers
         run: |
