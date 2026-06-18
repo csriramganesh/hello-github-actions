@@ -13,13 +13,13 @@ jobs:
         node-version:
           - 18
           - 20
-      runs-on: ${{matrix.os}}
+    runs-on: ${{matrix.os}}
 
-      steps:
-        - name: print matrix values
-          runs: |
-            echo "os.${{matrix.os}}"
-            echo "Node version :${{matrix.nodeversion}}"        
+    steps:
+      - name: print matrix values
+        runs: |
+          echo "os.${{matrix.os}}"
+          echo "Node version :${{matrix.nodeversion}}"        
               
   
       
