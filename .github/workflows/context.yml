@@ -1,0 +1,17 @@
+name: context
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: pint context information
+        run: |
+          echo "Actor: ${{github.actor}}"
+          echo "Repository: ${{github.repository}}"
+          echo "workflow: ${{github.workflow}}"
+          echo "Branch ref: ${{github.ref}}"
+          echo "commit sha: ${{github.sha}}"    
