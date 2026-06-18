@@ -1,0 +1,32 @@
+name: dockerhub.push
+
+on:
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: hello-html-app
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: build docker image
+        run: |
+          docker build -t $IMAGE_NAME .
+
+      - name: docker login
+        run: |
+          echo "{{secrets.DOCKER_PASSWORD}}" | docker login -u "{{secrets.DOCKER_USER}}" --password stdin
+      - name: TAG name
+        run: |
+          docker tag $IMAGE_NAME ${{DOCKER_USER}}/$IMAGE_NAME:latest
+
+      - name: docker dockerhub
+        run: |
+          docker push ${{DOCKER_USER}}/$IMAGE_NAME:latest    
+
+
